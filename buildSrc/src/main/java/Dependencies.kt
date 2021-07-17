@@ -75,8 +75,6 @@ object Libs {
             const val uiUtil = "androidx.compose.ui:ui-util:${version}"
             const val test = "androidx.compose.ui:ui-test:$version"
             const val uiTest = "androidx.compose.ui:ui-test-junit4:$version"
-
-
         }
         object Room {
             private const val version = "2.3.0"
