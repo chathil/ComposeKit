@@ -19,7 +19,7 @@ object Libs {
     }
 
     object Kotlin {
-        const val version = "1.5.21"
+        const val version = "1.5.10"
         const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$version"
         const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$version"
         const val extensions = "org.jetbrains.kotlin:kotlin-android-extensions:$version"
@@ -75,6 +75,7 @@ object Libs {
             const val uiUtil = "androidx.compose.ui:ui-util:${version}"
             const val test = "androidx.compose.ui:ui-test:$version"
             const val uiTest = "androidx.compose.ui:ui-test-junit4:$version"
+            const val compiler = "androidx.compose.compiler:compiler:$version"
 
 
         }

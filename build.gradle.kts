@@ -26,9 +26,6 @@ subprojects {
     repositories {
         google()
         mavenCentral()
-//        maven {
-//            setUrl(Urls.maven)
-//        }
     }
     apply {
         plugin("com.diffplug.spotless")
