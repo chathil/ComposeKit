@@ -10,6 +10,7 @@ object Libs {
     const val kotlinxSerialization = "org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.2"
     const val kotlinxCollections = "org.jetbrains.kotlinx:kotlinx-collections-immutable-jvm:0.3.4"
     const val hiltNavigationCompose = "androidx.hilt:hilt-navigation-compose:1.0.0-alpha03"
+    const val store = "com.dropbox.mobile.store:store4:4.0.2-KT15"
 
     object Hilt {
         private const val version = "2.37"
@@ -43,7 +44,7 @@ object Libs {
     }
 
     object Accompanist {
-        const val version = "0.14.0"
+        private const val version = "0.14.0"
         const val glide = "com.google.accompanist:accompanist-glide:$version"
         const val insets = "com.google.accompanist:accompanist-insets:$version"
         const val pager = "com.google.accompanist:accompanist-pager:$version"

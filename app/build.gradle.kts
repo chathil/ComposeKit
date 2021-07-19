@@ -73,6 +73,7 @@ dependencies {
     implementation(Libs.kotlinxSerialization)
     implementation(Libs.kotlinxCollections)
     implementation(Libs.hiltNavigationCompose)
+    implementation(Libs.store)
 
     implementation(Libs.Coroutines.core)
     implementation(Libs.Coroutines.android)
