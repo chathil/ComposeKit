@@ -10,6 +10,7 @@ object Libs {
     const val kotlinxSerialization = "org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.2"
     const val kotlinxCollections = "org.jetbrains.kotlinx:kotlinx-collections-immutable-jvm:0.3.4"
     const val hiltNavigationCompose = "androidx.hilt:hilt-navigation-compose:1.0.0-alpha03"
+    const val store = "com.dropbox.mobile.store:store4:4.0.2-KT15"
 
     object Hilt {
         private const val version = "2.37"
@@ -19,7 +20,7 @@ object Libs {
     }
 
     object Kotlin {
-        const val version = "1.5.21"
+        const val version = "1.5.10"
         const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$version"
         const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$version"
         const val extensions = "org.jetbrains.kotlin:kotlin-android-extensions:$version"
@@ -43,7 +44,7 @@ object Libs {
     }
 
     object Accompanist {
-        const val version = "0.14.0"
+        private const val version = "0.14.0"
         const val glide = "com.google.accompanist:accompanist-glide:$version"
         const val insets = "com.google.accompanist:accompanist-insets:$version"
         const val pager = "com.google.accompanist:accompanist-pager:$version"
@@ -75,6 +76,9 @@ object Libs {
             const val uiUtil = "androidx.compose.ui:ui-util:${version}"
             const val test = "androidx.compose.ui:ui-test:$version"
             const val uiTest = "androidx.compose.ui:ui-test-junit4:$version"
+            const val compiler = "androidx.compose.compiler:compiler:$version"
+
+
         }
         object Room {
             private const val version = "2.3.0"

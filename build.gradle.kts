@@ -26,9 +26,6 @@ subprojects {
     repositories {
         google()
         mavenCentral()
-//        maven {
-//            setUrl(Urls.maven)
-//        }
     }
     apply {
         plugin("com.diffplug.spotless")
@@ -42,11 +39,10 @@ subprojects {
 //            licenseHeaderFile rootProject.file('spotless/copyright.kt') /* add copyright header */
         }
     }
-
     tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
         kotlinOptions {
             // Treat all Kotlin warnings as errors
-            allWarningsAsErrors = true
+//            allWarningsAsErrors = true
 
             freeCompilerArgs = freeCompilerArgs + "-Xopt-in=kotlin.RequiresOptIn"
 
@@ -55,16 +51,24 @@ subprojects {
                 freeCompilerArgs + "-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi"
             freeCompilerArgs = freeCompilerArgs + "-Xopt-in=kotlinx.coroutines.FlowPreview"
             freeCompilerArgs = freeCompilerArgs + "-Xopt-in=kotlin.Experimental"
-
             // Set JVM target to 1.8
             jvmTarget = "1.8"
         }
     }
-    // androidx.test and hilt are forcing JUnit, 4.12. This forces them to use 4.13
-    configurations.configureEach {
-        resolutionStrategy {
-            force(Libs.junit)
-        }
+}
+
+
+
+fun isNonStable(version: String): Boolean {
+    val stableKeyword = listOf("RELEASE", "FINAL", "GA").any { version.toUpperCase().contains(it) }
+    val regex = "^[0-9,.v-]+(-r)?$".toRegex()
+    val isStable = stableKeyword || regex.matches(version)
+    return isStable.not()
+}
+
+tasks.withType<DependencyUpdatesTask> {
+    rejectVersionIf {
+        isNonStable(candidate.version) && !isNonStable(currentVersion)
     }
 }
 
