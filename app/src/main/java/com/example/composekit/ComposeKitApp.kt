@@ -1,7 +1,7 @@
 package com.example.composekit
 
 import androidx.compose.runtime.Composable
-import com.example.composekit.ui.theme.ComposeKitTheme
+import com.example.composekit.core.ui.theme.ComposeKitTheme
 import com.google.accompanist.insets.ProvideWindowInsets
 
 @Composable
