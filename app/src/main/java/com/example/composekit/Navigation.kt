@@ -9,8 +9,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.composekit.home.HomeScreen
-import com.example.composekit.home.HomeViewModel
+import com.example.uimain.HomeScreen
+import com.example.uimain.HomeViewModel
 
 /**
  * Destinations used in the ([ComposeKitApp])
@@ -64,7 +64,7 @@ fun NavGraph(
              * Workaround because calling [viewModel()] directly
              * in composable function declaration causing this error
              * java.lang.RuntimeException: Cannot create an instance of class
-             * com.example.composekit.home.HomeViewModel
+             * com.example.uimain.HomeViewModel
              */
             val homeViewModel: HomeViewModel =
                 viewModel(factory = HiltViewModelFactory(LocalContext.current, it))

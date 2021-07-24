@@ -1,10 +1,5 @@
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
-rootProject.name = "ComposeKit"
 include(":app")
- 
+include(":core")
+include(":common-ui")
+include(":ui-main")
+include(":common-ui-resources")

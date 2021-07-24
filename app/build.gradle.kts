@@ -1,11 +1,15 @@
+import com.example.composekit.buildsrc.Libs
 
 plugins {
     id("com.android.application")
     id("kotlin-android")
     kotlin("kapt")
     id("dagger.hilt.android.plugin")
-    id("kotlinx-serialization")
-    id("kotlin-parcelize")
+}
+
+apply {
+    from("../shared_dependencies.gradle.kts")
+    from("../shared_ui_dependencies.gradle.kts")
 }
 
 android {
@@ -68,67 +72,14 @@ android {
 }
 
 dependencies {
-    implementation(Libs.Kotlin.stdlib)
-    implementation(Libs.material)
-    implementation(Libs.kotlinxSerialization)
-    implementation(Libs.kotlinxCollections)
+    implementation(project(":core"))
+    implementation(project(":common-ui"))
+    implementation(project(":ui-main"))
+    implementation(project(":common-ui-resources"))
     implementation(Libs.hiltNavigationCompose)
-    implementation(Libs.store)
-
-    implementation(Libs.Coroutines.core)
-    implementation(Libs.Coroutines.android)
-    implementation(Libs.Coroutines.test)
-    implementation(Libs.Coroutines.playServices)
-
-    implementation(Libs.AndroidX.dataStore)
-    implementation(Libs.AndroidX.coreKtx)
-    implementation(Libs.AndroidX.appcompat)
-    implementation(Libs.AndroidX.navigation)
-    implementation(Libs.AndroidX.Activity.activityCompose)
-    implementation(Libs.AndroidX.Lifecycle.viewModelCompose)
-    implementation(Libs.AndroidX.Lifecycle.runtimeKtx)
-    implementation(Libs.AndroidX.fragmentKtx)
-
-    implementation(Libs.AndroidX.Compose.material)
-    implementation(Libs.AndroidX.Compose.tooling)
-    implementation(Libs.AndroidX.Compose.layout)
-    implementation(Libs.AndroidX.Compose.materialIconsExtended)
-    implementation(Libs.AndroidX.Compose.uiUtil)
-    implementation(Libs.AndroidX.Compose.runtime)
-    implementation(Libs.AndroidX.Compose.foundation)
-    implementation(Libs.AndroidX.Compose.compiler)
-
-    implementation(Libs.Accompanist.insets)
-    implementation(Libs.Accompanist.glide)
-    implementation(Libs.Accompanist.pager)
-    implementation(Libs.Accompanist.pagerIndicators)
-
-
-    kapt(Libs.Hilt.hiltCompiler)
-    implementation(Libs.Hilt.hiltAndroid)
-
-
-    implementation(Libs.AndroidX.Room.runtime)
-    implementation(Libs.AndroidX.Room.ktx)
-    implementation(Libs.AndroidX.Room.legacySupport)
-    kapt(Libs.AndroidX.Room.compiler)
-
-    implementation(Libs.Retrofit.retrofit)
-    implementation(Libs.Retrofit.coroutinesAdapter)
-    implementation(Libs.Retrofit.kotlinxSerializationConverter)
-
-    androidTestImplementation(Libs.junit)
-    androidTestImplementation(Libs.AndroidX.Test.Ext.junit)
-    androidTestImplementation(Libs.AndroidX.Test.core)
-    androidTestImplementation(Libs.AndroidX.Test.rules)
-    androidTestImplementation(Libs.AndroidX.Test.espressoCore)
-    androidTestImplementation(Libs.AndroidX.Compose.uiTest)
-
-    // androidx.test is forcing JUnit, 4.12. This forces it to use 4.13.2
-    configurations.configureEach {
-        resolutionStrategy {
-            force(Libs.junit)
-        }
-    }
-
 }
+
+
+
+
+

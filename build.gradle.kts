@@ -6,10 +6,10 @@ buildscript {
         google()
     }
     dependencies {
-        classpath(Libs.androidGradlePlugin)
-        classpath(Libs.Kotlin.gradlePlugin)
-        classpath(Libs.Hilt.hiltGradlePlugin)
-        classpath(Libs.Kotlin.serializationPlugin)
+        classpath(com.example.composekit.buildsrc.Libs.androidGradlePlugin)
+        classpath(com.example.composekit.buildsrc.Libs.Kotlin.gradlePlugin)
+        classpath(com.example.composekit.buildsrc.Libs.Hilt.hiltGradlePlugin)
+        classpath(com.example.composekit.buildsrc.Libs.Kotlin.serializationPlugin)
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle.kts files
@@ -22,20 +22,24 @@ plugins {
     id("com.github.ben-manes.versions").version("0.39.0")
 }
 
+
 subprojects {
     repositories {
         google()
         mavenCentral()
     }
+//    apply(plugin = "java")
+//    apply(plugin = "org.jetbrains.kotlin.jvm")
     apply {
         plugin("com.diffplug.spotless")
+//        plugin(org.jetbrains.kotlin.gradle.plugin.KotlinPlatformJvmPlugin::class)
     }
     spotless {
         kotlin {
             target("**/*.kt")
             targetExclude("$buildDir/**/*.kt")
             targetExclude("bin/**/*.kt")
-            ktlint(Versions.ktlint)
+            ktlint(com.example.composekit.buildsrc.Versions.ktlint)
 //            licenseHeaderFile rootProject.file('spotless/copyright.kt') /* add copyright header */
         }
     }
