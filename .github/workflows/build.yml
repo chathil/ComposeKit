@@ -5,10 +5,12 @@ on:
     branches:
       - mvvm
       - clean-arch
+      - modular
   pull_request:
     branches:
       - mvvm
       - clean-arch
+      - modular
 
 jobs:
   build:
